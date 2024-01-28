@@ -2,8 +2,8 @@ const path = require('path')
 
 module.exports = {
   mode: "development",
-  // node 环境不需要 source-map
-  devtool: 'source-map',
+  // // node 环境不需要 source-map
+  // devtool: 'source-map',
   watch: true,
   resolve: {
     alias: {
