@@ -27,6 +27,11 @@
       "static/chunks/main.js",
       "static/chunks/pages/user.js"
     ],
+    "/user/detail/[id]": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/user/detail/[id].js"
+    ],
     "/user/list": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
