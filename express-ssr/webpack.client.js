@@ -1,6 +1,5 @@
 const path = require("path");
 const { merge } = require("webpack-merge");
-const webpackNodeExternal = require('webpack-node-externals')
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const baseConfig = require("./webpack.base");
 
@@ -14,7 +13,6 @@ module.exports = merge(baseConfig, {
     clean: true,
     publicPath: "/",
   },
-  externals: [webpackNodeExternal()], // 服务器上已经安装了 node_modules
   module: {
     rules: [
       {
@@ -24,14 +22,18 @@ module.exports = merge(baseConfig, {
           MiniCssExtractPlugin.loader,
           {
             loader: "css-loader",
-            options: {
-              modules: {
-                localIdentName: '[name]__[hash:5]'
-              }
-            }
+            // options: {
+            //   modules: {
+            //     localIdentName: '[name]__[hash:5]'
+            //   }
+            // }
           },
         ],
       },
+      {
+        test: /\.png$/,
+        type: 'asset/resource',
+      }
     ],
   },
   plugins: [

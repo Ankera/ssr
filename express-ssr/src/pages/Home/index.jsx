@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import styles from './index.css';
-
-console.log('=======client serve33r 222=========', styles)
+import logo from '@/assets/11.png'
+import './index.css';
 
 export default function() {
   const [num, setNum] = useState(0)
@@ -13,10 +12,12 @@ export default function() {
   return (
     <div>
       <div>hello React ssr ----112222</div>
-      <div>hello React ssr ----1122</div>
+      <div>hello React ssr ----11222</div>
       <div>hello React ssr ----1122</div>
       <h1 onClick={addNum}>{num}</h1>
-      <button >按钮</button>
+      <button className="btn">按钮</button>
+      <hr />
+      <img src={logo} alt="" />
     </div>
   )
 }
