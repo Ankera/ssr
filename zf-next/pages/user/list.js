@@ -1,11 +1,11 @@
 import Link from 'next/link'
+import request from '@/utils/request'
 import Layout from './index'
 
 const UserList = (props) => {
   // console.log('=======', props)
   return (
     <Layout>
-      用户列表List
       <ul>
         {
           (props.list || []).map((user) => (
@@ -18,17 +18,9 @@ const UserList = (props) => {
 }
 
 UserList.getInitialProps = async () => {
+  const response = await request.get('/api/users')
   return {
-    list: [
-      {
-        id: '1',
-        name: 'Tom'
-      },
-      {
-        id: '2',
-        name: 'Tom'
-      }
-    ]
+    list: response.data.data
   }
 }
 

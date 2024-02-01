@@ -29,12 +29,12 @@ class LayoutApp extends App {
           `
         }
         </style>
+
         <header>
-          <h1>头部</h1>
           <img className={style.logo} src='/images/11.png' />
           <ul>
             <li><Link href="/">首页</Link></li>
-            <li><Link href="/user">用户管理</Link></li>
+            <li><Link href="/user/list">用户管理</Link></li>
             <li><Link href="/profile">个人中心</Link></li>
           </ul>
         </header>
