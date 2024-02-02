@@ -16,3 +16,21 @@ https://www.bilibili.com/video/BV1dc411X7Xm/?spm_id_from=333.337.search-card.all
 
 https://coding.imooc.com/class/evaluation/570.html#Anchor
 ```
+
+### NODE
+```
+Node 异步高并发
+
+```
+
+### nest优点
+```
+开箱即用
+成本低
+架构易用扩展
+稳定性好
+丰富生态
+技术成型
+
+Node 搭建微服务
+```
