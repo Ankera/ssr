@@ -34,3 +34,17 @@ Node 异步高并发
 
 Node 搭建微服务
 ```
+
+
+### CLI 命令
+```
+xw
+
+// 更新私有包版本号
+xw update pkg
+xw icon xxx
+xw api 更新api serice
+xw webpack 统一打包工具
+
+@xw&price
+```
