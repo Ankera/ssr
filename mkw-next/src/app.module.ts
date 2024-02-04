@@ -8,6 +8,10 @@ import { SsrModule } from './ssr/ssr.module';
 import * as dotenv from 'dotenv';
 import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
 import { ConfigEnum } from './enum/enum.config';
+import { User } from './user/user.entity';
+import { Profile } from './user/profile.enttiy';
+import { Roles } from './roles/roles.entity';
+import { Logs } from './logs/logs.entity';
 
 const envFilePath = `.env.${process.env.NODE_ENV || 'development'}`;
 
@@ -50,7 +54,7 @@ const envFilePath = `.env.${process.env.NODE_ENV || 'development'}`;
           username: configService.get(ConfigEnum.DB_USERNAME),
           password: configService.get(ConfigEnum.DB_PASSWORD),
           database: configService.get(ConfigEnum.DB_DATABASE),
-          entities: [],
+          entities: [User, Profile, Roles, Logs],
           synchronize: configService.get(ConfigEnum.DB_SYNC),
           logging: ['error'],
         }) as TypeOrmModuleOptions,
