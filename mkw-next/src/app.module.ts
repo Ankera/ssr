@@ -1,5 +1,7 @@
 import { Module } from '@nestjs/common';
 import * as Joi from 'joi';
+import { LoggerModule } from 'nestjs-pino';
+import { join } from 'path';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { UserModule } from './user/user.module';
 import { NewModule } from './new/new.module';
@@ -69,6 +71,43 @@ const envFilePath = `.env.${process.env.NODE_ENV || 'development'}`;
     //   entities: [],
     //   synchronize: true,
     // }),
+    /**
+     * pino 日志
+     */
+    LoggerModule.forRoot({
+      // pinoHttp: {
+      //   transport: {
+      //     target: 'pino-pretty',
+      //     options: {
+      //       colorize: true,
+      //     },
+      //   },
+      // },
+      pinoHttp: {
+        transport: {
+          targets: [
+            process.env.NODE_ENV == 'development'
+              ? {
+                  level: 'info',
+                  target: 'pino-pretty',
+                  options: {
+                    colorize: true,
+                  },
+                }
+              : {
+                  level: 'info',
+                  target: 'pino-roll',
+                  options: {
+                    file: join('logs', 'log.txt'),
+                    frequency: 'daily',
+                    size: '10m',
+                    mkdir: true,
+                  },
+                },
+          ],
+        },
+      },
+    }),
   ],
   controllers: [],
   providers: [],
