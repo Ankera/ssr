@@ -1,7 +1,6 @@
 import { Controller, Get, Post } from '@nestjs/common';
 import { UserService } from './user.service';
 import { ConfigService } from '@nestjs/config';
-import { ConfigEnum } from 'src/enum/enum.config';
 
 @Controller('user')
 export class UserController {
@@ -15,8 +14,6 @@ export class UserController {
 
   @Get()
   getUsers(): any {
-    console.log('====env DB======', this.configService.get(ConfigEnum.DB));
-
     console.log('=======yaml=======', this.configService.get('db'));
 
     console.log('=======DB_PORT=======', this.configService.get('DB_PORT'));

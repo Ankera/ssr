@@ -34,3 +34,12 @@ joi 校验
 pnpm add config --save
 三方的
 ```
+
+### ssr
+```
+https://juejin.cn/post/7240996011547836453
+
+https://duanxl.com/detail/ssr
+
+https://www.sdk.cn/details/veYqE8z9ZR09b7Wj4Q
+```
