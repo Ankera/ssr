@@ -43,3 +43,14 @@ https://duanxl.com/detail/ssr
 
 https://www.sdk.cn/details/veYqE8z9ZR09b7Wj4Q
 ```
+
+### Logger
+```
+pino
+
+pnpm add nestjs-pino --save-dev
+
+==============================
+
+
+```
