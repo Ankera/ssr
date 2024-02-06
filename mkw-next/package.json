@@ -26,11 +26,13 @@
     "dotenv": "^16.4.1",
     "lodash": "^4.17.21",
     "mysql2": "^3.9.1",
+    "nest-winston": "^1.9.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.8.1",
-    "typeorm": "^0.3.20"
+    "typeorm": "^0.3.20",
+    "winston": "^3.11.0"
   },
   "devDependencies": {
     "@nestjs/cli": "^10.0.0",

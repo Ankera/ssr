@@ -6,7 +6,7 @@ async function bootstrap() {
     // logger: false, // 关闭全局日志
   });
 
-  // app.setGlobalPrefix('api/v1');
+  app.setGlobalPrefix('api/v1');
 
   await app.listen(3000);
 
