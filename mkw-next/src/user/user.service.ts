@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
-import * as dotenv from 'dotenv';
+// import * as dotenv from 'dotenv';
 import { User } from './user.entity';
 
 @Injectable()
@@ -13,7 +13,7 @@ export class UserService {
 
   async findAll() {
     const users = await this.userRepository.find();
-    console.log('===users=2==', users);
+    // console.log('===users=2==', users);
     return users;
   }
 
@@ -35,7 +35,7 @@ export class UserService {
   }
 
   getUsers(): any {
-    console.log('Dem11o1', dotenv.config());
+    // console.log('Dem11o1', dotenv.config());
     return {
       code: 200,
       data: {

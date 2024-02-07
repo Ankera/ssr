@@ -1,4 +1,4 @@
-import { Controller, Get, Post } from '@nestjs/common';
+import { Body, Controller, Get, Post } from '@nestjs/common';
 import { UserService } from './user.service';
 import { ConfigService } from '@nestjs/config';
 import { User } from './user.entity';
@@ -15,12 +15,9 @@ export class UserController {
     // this.userService = new UserService();
   }
 
-  @Get()
+  @Get('/:id')
   getUsers(): any {
-    console.log('=======yaml=======', this.configService.get('db'));
-
-    console.log('=======DB_PORT=======', this.configService.get('DB_PORT'));
-    return this.userService.getUsers();
+    return 'this hello world';
   }
 
   @Get('allUsers')
@@ -29,13 +26,14 @@ export class UserController {
   }
 
   @Post()
-  addUser() {
-    const user = { username: 'Tom', password: '123456' } as User;
+  addUser(@Body() dto: any): any {
+    console.log('🚀 ~ ====UserController ~ addUser ~ dto:==', dto);
+    const user = dto as User;
     return this.userService.create(user);
   }
 
-  @Post()
-  addUsers(): any {
-    return this.userService.addUsers();
-  }
+  // @Post()
+  // addUsers(): any {
+  //   return this.userService.addUsers();
+  // }
 }
