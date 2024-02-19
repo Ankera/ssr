@@ -1,1 +1,1 @@
-self.__REACT_LOADABLE_MANIFEST="{\"user/detail/[id].js -> @/components/UserInfo\":{\"id\":\"user/detail/[id].js -> @/components/UserInfo\",\"files\":[\"static/chunks/components_UserInfo_js.js\"]}}"
+self.__REACT_LOADABLE_MANIFEST='{"user/detail/[id].js -> @/components/UserInfo":{"id":5069,"files":["static/chunks/69.b097a7bbb261efe9.js"]}}';

@@ -1,8 +1,8 @@
 {
   "user/detail/[id].js -> @/components/UserInfo": {
-    "id": "user/detail/[id].js -> @/components/UserInfo",
+    "id": 5069,
     "files": [
-      "static/chunks/components_UserInfo_js.js"
+      "static/chunks/69.b097a7bbb261efe9.js"
     ]
   }
 }
