@@ -52,6 +52,21 @@ const getSsrConfig = (): Config => {
 
 export const ssrConfig: Config = getSsrConfig();
 
+export const getPages = async (): Promise<string[]> => {
+  const possibles = await readdir(path.join(cwd, ssrConfig.viewsDir));
+  const pages = [];
+  for (let i = 0; i < possibles.length; i++) {
+    const possible = possibles[i];
+    const name = path.basename(getPageId(possible, '/'));
+    if (name.toLowerCase().startsWith('_app') || name.toLowerCase().startsWith('_document')) {
+      continue;
+    }
+    if (possible.endsWith('.jsx') || possible.endsWith('.tsx')) {
+      pages.push(possible);
+    }
+  }
+  return pages;
+};
 
 export const getPageId = (page: string, separator: string = '_'): string => {
   const [, ...rest] = page.replace(path.join(cwd, ssrConfig.viewsDir), '')

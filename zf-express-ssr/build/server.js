@@ -26,11 +26,14 @@ var Counter = function Counter(props) {
     _useState2 = _slicedToArray(_useState, 2),
     number = _useState2[0],
     setNumber = _useState2[1];
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, number, "-", number), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, number, "-", number), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, number, "-", number), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, number, "-", number), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, number, "-", number), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, number, "-", number), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, number, "-", number), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, number, "-", number), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, props.message || '-'), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    console.log('==========', number);
+  }, [number]);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, number), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, props.message || '-'), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
     onClick: function onClick() {
       return setNumber(number + 1);
     }
-  }, "\u52A0\u6CD5"));
+  }, "\u52A0\u6CD511"));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Counter);
 
@@ -151,9 +154,9 @@ __webpack_require__.r(__webpack_exports__);
 
 var express = __webpack_require__(/*! express */ "express");
 var app = express();
-console.log('appp', app);
 app.use(express["static"]('public'));
 app.get('*', function (req, res) {
+  console.log('=========Page', _routers_counter__WEBPACK_IMPORTED_MODULE_1__["default"]);
   var html = (0,react_dom_server__WEBPACK_IMPORTED_MODULE_2__.renderToString)( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_routers_counter__WEBPACK_IMPORTED_MODULE_1__["default"], {
     message: "this is msg"
   }));

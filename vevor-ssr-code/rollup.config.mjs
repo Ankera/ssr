@@ -4,12 +4,14 @@ import babel from '@rollup/plugin-babel';
 import commonjs from '@rollup/plugin-commonjs';
 import typescript from '@rollup/plugin-typescript'
 import { terser } from 'rollup-plugin-terser';
+import json from '@rollup/plugin-json';
 
 const isProd = process.env.NODE_ENV === 'production';
 const distDir = isProd ? 'dist/production' : 'dist/development';
 const extensions = ['.js', '.jsx', '.ts', '.tsx'];
 
 const coreConfig = {
+  context: 'node',
   plugins: [
     external(),
     resolve({
@@ -24,6 +26,7 @@ const coreConfig = {
     typescript(),
     commonjs(),
     (isProd && terser()),
+    json(),
   ],
 };
 
@@ -47,9 +50,9 @@ const fileConfig = (src, dist) => ({
 
 export default [
   dirConfig('src/register.ts'),
-  // fileConfig('src/components/Document/index.tsx', `${distDir}/document.js`),
-  // fileConfig('src/components/Document/context.ts', `${distDir}/document-context.js`),
-  // fileConfig('src/components/Head/index.tsx', `${distDir}/head.js`),
-  // fileConfig('src/components/Main.tsx', `${distDir}/main.js`),
-  // fileConfig('src/components/App.tsx', `${distDir}/app.js`),
+  fileConfig('src/components/Document/index.tsx', `${distDir}/document.js`),
+  fileConfig('src/components/Document/context.ts', `${distDir}/document-context.js`),
+  fileConfig('src/components/Head/index.tsx', `${distDir}/head.js`),
+  fileConfig('src/components/Main.tsx', `${distDir}/main.js`),
+  fileConfig('src/components/App.tsx', `${distDir}/app.js`),
 ];

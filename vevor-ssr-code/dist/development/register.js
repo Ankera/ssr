@@ -1,6 +1,6 @@
 'use strict';
 
-var register = require('./register-BuBgtYMO.js');
+var register = require('./register-Bvsgc-jQ.js');
 require('path');
 require('fs');
 require('react');

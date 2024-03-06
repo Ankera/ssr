@@ -4,10 +4,10 @@ import { renderToString } from 'react-dom/server'
 
 const express = require('express');
 const app = express();
-console.log('appppp', app);
 app.use(express.static('public'))
 
 app.get('*', (req, res) => {
+  console.log('=========Page', Counter);
   const html = renderToString(<Counter message="this is msg"></Counter>)
   console.log('=========', html);
   res.send(`
