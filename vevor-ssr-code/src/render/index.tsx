@@ -1,8 +1,7 @@
 import React from 'react';
 import path from 'path';
 import cheerio from 'cheerio';
-import LZString from 'lz-string';
-import URLSafeBase64 from 'urlsafe-base64';
+import { ServerStyleSheet, StyleSheetManager } from 'styled-components';
 import ReactDOMServer from 'react-dom/server';
 import { getPageId, isProd, getEngine, ssrConfig, existsSync } from '../helpers';
 
@@ -42,17 +41,6 @@ require('@babel/register')({
   ].filter(Boolean),
 })
 
-const compressProps = (props: any) => {
-  const packed = JSON.stringify(props);
-  const compressed = Buffer.from(LZString.compressToUint8Array(packed));
-  return URLSafeBase64.encode(compressed);
-}
-
-const getRenderToStringMethod = async () => { 
-  const method = (await import('./stringify/default')).default;
-  return method;
-}
-
 const cwd = process.cwd();
 const ext = `.${getEngine()}`;
 
@@ -67,13 +55,32 @@ export default async function render(file: string, props: any): Promise<string> 
   const pageId = getPageId(file, '_');
   let Page = require(file);
   Page = Page.default || Page;
-  
+
+  const sheet = new ServerStyleSheet();
+  const styles = sheet.getStyleTags();
+
+  console.log('styles===', styles);
   
   const str = ReactDOMServer.renderToString(<DocumentComponent><Page {...props} /></DocumentComponent>)
 
   const $ = cheerio.load(str, { decodeEntities: false });
 
   $('script#react_ssr_data').html(`window.REACT_SSR_DATA=${JSON.stringify(props)}`);
+  
+  $('head').append(styles);
+
+  const styles2 = `
+    <style>
+      .title {
+        color: red;
+        font-size: 32px;
+      }
+    </style>
+`;
+  $('head').append(styles2);
+
+  console.log('===str==st===$.html()', $.html())
+
   // console.log('==str=2=', str);
 
   // const html = (await getRenderToStringMethod())(

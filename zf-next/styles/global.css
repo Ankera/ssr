@@ -6,3 +6,7 @@ html,body {
 ul,li {
   list-style: none;
 }
+
+.title {
+  font-size: 100px;
+}

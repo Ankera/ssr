@@ -1,11 +1,7 @@
 {
   "/_app": "pages/_app.js",
-  "/": "pages/index.js",
   "/_error": "pages/_error.js",
-  "/profile": "pages/profile.js",
-  "/user/detail/[id]": "pages/user/detail/[id].js",
-  "/user/add": "pages/user/add.js",
-  "/user": "pages/user.js",
-  "/user/list": "pages/user/list.js",
-  "/_document": "pages/_document.js"
+  "/_document": "pages/_document.js",
+  "/": "pages/index.js",
+  "/profile": "pages/profile.js"
 }

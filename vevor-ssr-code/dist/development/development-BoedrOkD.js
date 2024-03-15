@@ -1,6 +1,6 @@
 'use strict';
 
-var register = require('./register-Bvsgc-jQ.js');
+var register = require('./register-DSo4h60E.js');
 var fs$i = require('fs');
 var require$$0 = require('constants');
 var require$$0$1 = require('stream');
@@ -9,8 +9,9 @@ var require$$4 = require('assert');
 var path$c = require('path');
 var require$$2 = require('events');
 var require$$0$3 = require('buffer');
-var index = require('./index-DT4IBVnM.js');
+var index = require('./index-Drtsauy6.js');
 require('react');
+require('styled-components');
 require('url');
 require('http');
 require('https');
@@ -6289,10 +6290,7 @@ var development = ( /*#__PURE__*/(function () {
           _context.next = 9;
           return new Promise(function (resolve) {
             app.get('/_react-ssr/home.css', function (req, res) {
-              res.send({
-                ok: 200,
-                message: 'this is success'
-              });
+              res.send("\n      .title {\n        color: red;\n      }\n      .title_home {\n        font-size: 100px;\n      }\n      ");
             });
             var proxyMiddleware = index.dist.createProxyMiddleware({
               target: "http://localhost:3002",

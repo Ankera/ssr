@@ -25,10 +25,14 @@ export default async (app: express.Application): Promise<void> => {
 
   await new Promise((resolve) => {
     app.get('/_react-ssr/home.css', (req, res) => {
-      res.send({
-        ok: 200,
-        message: 'this is success'
-      })
+      res.send(`
+      .title {
+        color: red;
+      }
+      .title_home {
+        font-size: 100px;
+      }
+      `)
     })
 
     const proxyMiddleware = createProxyMiddleware({

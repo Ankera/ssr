@@ -1,10 +1,11 @@
 'use strict';
 
-var register = require('./register-Bvsgc-jQ.js');
-var index = require('./index-DT4IBVnM.js');
+var register = require('./register-DSo4h60E.js');
+var index = require('./index-Drtsauy6.js');
 require('path');
 require('fs');
 require('react');
+require('styled-components');
 require('stream');
 require('util');
 require('url');
