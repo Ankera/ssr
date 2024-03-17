@@ -10,6 +10,7 @@ app.use(cors({
   origin: 'http://localhost:3000', // 允许的来源
   credentials: true // 允许包含凭据的请求
 }));
+
 app.use(session({
   saveUninitialized: true,
   resave: true,
@@ -23,15 +24,18 @@ app.use(express.urlencoded({extended: true}))
 const users = [
   {
     id: 1,
-    name: "Tom2222111===="
+    name: "Tom2222111",
+    createdAt: new Date().toISOString()
   },
   {
     id: 2,
-    name: "Tom2222222233333"
+    name: "Tom2222222233333",
+    createdAt: new Date().toISOString()
   },
   {
     id: 3,
-    name: "Tom222222333==========="
+    name: "Tom222222333",
+    createdAt: new Date().toISOString()
   }
 ]
 
@@ -61,9 +65,10 @@ app.post('/api/login', (req, res) => {
 
 app.post('/api/register', (req, res) => {
   const user = req.body;
-  console.log('========', user)
-  users.push(user);
+  // console.log('========', user)
   user.id = Date.now() + '';
+  user.createdAt = new Date().toISOString();
+  users.push(user);
   req.session.user = user;
   res.json({
     success: true,

@@ -1,1 +1,1 @@
-self.__REACT_LOADABLE_MANIFEST="{}"
+self.__REACT_LOADABLE_MANIFEST="{\"../components/UserInfo.js -> moment\":{\"id\":\"../components/UserInfo.js -> moment\",\"files\":[\"static/chunks/node_modules_store_moment_2_30_1_node_modules_moment_moment_js.js\"]},\"user/detail/[id].js -> @/components/UserInfo\":{\"id\":\"user/detail/[id].js -> @/components/UserInfo\",\"files\":[\"static/chunks/components_UserInfo_js.js\"]}}"

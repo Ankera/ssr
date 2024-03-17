@@ -9,6 +9,7 @@ class LayoutApp extends App {
     if(Component.getInitialProps){
       pageProps = await Component.getInitialProps(ctx);
     }
+    console.log('===2', pageProps)
     return { pageProps }
   }
 
@@ -41,7 +42,7 @@ class LayoutApp extends App {
 
         <RouteComponent {...pageProps}/>
 
-        <footer style={{textAlign: 'center'}}>底部---珠峰架构</footer>
+        <footer className={style.footer}>珠峰架构</footer>
       </div>
     )
   }

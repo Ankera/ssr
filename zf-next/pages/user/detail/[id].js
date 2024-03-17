@@ -4,7 +4,9 @@ import request from '@/utils/request'
 // import UserInfo from '@/components/UserInfo'
 import dynamic from 'next/dynamic'
 
+// 懒加载
 const DynamicUserInfo = dynamic(() => import('@/components/UserInfo'))
+
 const UserDetails = (props) => {
   const [show, setShow] = React.useState(false)
 
