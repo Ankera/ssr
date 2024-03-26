@@ -1,12 +1,25 @@
-import "./globals.css";
+// app/layout.js
+import Link from "next/link";
 
-export default function Layout({ children, modal }: any) {
+// app/layout.js
+export const metadata = {
+  title: {
+    default: 'home',
+    template: '%s | Home'
+  }
+}
+
+export default function RootLayout({ children }: any) {
   return (
-    <html>
+    <html lang="en">
       <body>
+        <div>
+          <Link href="/a">Link to /a</Link>
+          <br />
+          <Link href="/b">Link to /b</Link>
+        </div>
         {children}
-        {modal}
       </body>
     </html>
-  );
+  )
 }

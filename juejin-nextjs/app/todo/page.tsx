@@ -1,3 +1,7 @@
+import 'server-only'
+
+export const revalidate = 0;
+
 export default async function Page() {
   const res = await fetch("https://jsonplaceholder.typicode.com/todos");
   const data = (await res.json()).slice(0, 10);
@@ -15,3 +19,5 @@ export default async function Page() {
     </ul>
   );
 }
+
+// (static) prerendered as static content
