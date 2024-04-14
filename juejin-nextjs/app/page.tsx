@@ -2,32 +2,12 @@ import Image from 'next/image'
 import { SubmitButton } from './submit-button';
 import LocalImage from '@/components/Image';
 
+// https://www.cnblogs.com/hlkawa/p/16712927.html
 
 
 export default async function Home() {
   return (
     <div>
-      {
-          [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20].map((_, index) => (<h1 key={index}>{String(index+ 1).repeat(10)}</h1>))
-        }
-        {
-          [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20].map((_, index) => (<h1 key={index}>{String(index+ 1).repeat(10)}</h1>))
-        }
-        {
-          [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20].map((_, index) => (<h1 key={index}>{String(index+ 1).repeat(10)}</h1>))
-        }
-        {
-          [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20].map((_, index) => (<h1 key={index}>{String(index+ 1).repeat(10)}</h1>))
-        }
-        {
-          [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20].map((_, index) => (<h1 key={index}>{String(index+ 1).repeat(10)}</h1>))
-        }
-        {
-          [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20].map((_, index) => (<h1 key={index}>{String(index+ 1).repeat(10)}</h1>))
-        }
-        {
-          [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20].map((_, index) => (<h1 key={index}>{String(index+ 1).repeat(10)}</h1>))
-        }
          <picture>
 
           <LocalImage 

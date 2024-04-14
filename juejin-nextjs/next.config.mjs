@@ -8,6 +8,19 @@ const nextConfig = {
   images: {
     remotePatterns: defautNextConfigImage,
   },
+  async webpack(config, { isServer }) {
+    const res = await config.entry();
+    console.log('======config', res, isServer)
+    // if (isServer) {
+    //   // 针对服务器端渲染配置
+    //   config.entry = './server.js';
+    //   config.output.libraryTarget = 'commonjs2'; // 输出为 CommonJS2 格式
+    // } else {
+    //   // 针对客户端渲染配置
+    //   config.entry = './client.js';
+    // }
+    return config;
+  },
   // basePath: '/docs',
   // headers: async () => {
   //   return [
